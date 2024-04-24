@@ -4,7 +4,7 @@ import './SignUp.css'
 
 
 
-const SignForm = (props) => {
+const SignForm = () => {
     const [fullName, setFullName] = useState('')
     const [email, setEmail] = useState('')
     const [password, setPassword] = useState('')
@@ -14,24 +14,30 @@ const SignForm = (props) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         if(isFormValid()) {
+            console.log('s')
             const usuario = {name:fullName,email:email,password:password}
             const añadirUsuario = await signUp(usuario)
-            const {token,role,messae} = añadirUsuario
-            //console.log(role,token,messae)
-            if(messae == 'User already exits'){ 
-                alert(añadirUsuario.messae)
-            } else {
-            alert('You are IN!')
-            localStorage.setItem("token", token)  
+            const {token,messae,username} = añadirUsuario 
+                console.log(añadirUsuario)
+                if(messae == 'User already exits'){ 
+                    alert(añadirUsuario.messae)
+                } else {
+                    localStorage.setItem("token", token)
+                    localStorage.setItem("nombre", username)  
+                    console.log(username,token,messae)
+                    alert('You are IN!')
             }     
-        }else {
-            alert('Completa los campos de manera correcta')
+        } else {
+        alert('Rellena los campos de manera correcta')
         }
+                  
     }
 
     const isFormValid = () => {
-        
-        return validateEmail() && validatePassword() && validateConfirmPassword() && isChecked  !== '';
+        return validateEmail() && 
+        validatePassword() && validateConfirmPassword() &&
+         isChecked  !== '' &&
+         stylefullNameLength();
     }
     const validateConfirmPassword = () => {
         return confirmPassword === password;
@@ -61,6 +67,9 @@ const SignForm = (props) => {
             return ''
         }
     }
+    const stylefullNameLength = () => {
+        return fullName.length > 3
+    }
         
     const styleEmail = () => {
         if (email === '') {
@@ -78,7 +87,7 @@ const SignForm = (props) => {
         }
     }
     
-    
+
     return (
         <div className='container' id="container">
             <div className='form-container sign-up-container'></div>
