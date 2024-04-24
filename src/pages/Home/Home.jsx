@@ -1,7 +1,7 @@
 
 import './Home.css'
 import Filtrado from '../../components/Filtrado/Filtrado.jsx'
-import {getTodos} from '../../services/auth.js'
+import {getTodos} from '../../services/recetas.js'
 import {useState,useEffect} from 'react'
 // Home.jsx
 import './Home.css';
