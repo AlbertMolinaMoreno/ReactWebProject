@@ -1,4 +1,37 @@
+
 .recetasActu{
     display: flex;
     justify-content: space-between;
 }
+
+/* Home.css */
+
+.Home-video {
+    position: relative;
+    width: 100vw;
+    height: 60vh; /* Establece la altura deseada para el contenedor de video */
+    overflow: hidden; /* Oculta cualquier parte del video que se salga del contenedor */
+  }
+  
+  .video {
+    width: 100%;
+    height: auto; /* Restaura la altura automática del video */
+    object-fit: cover; /* Ajusta el video manteniendo su relación de aspecto */
+  }
+  
+  .text-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white; /* Color del texto */
+    text-align: center; /* Alineación del texto */
+    font-size: 4rem; /* Tamaño del texto */
+    background-color: rgba(0, 0, 0, 0.5); /* Fondo semi-transparente para el texto */
+  }
+  
+
