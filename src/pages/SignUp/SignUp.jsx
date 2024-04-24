@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import {signUp} from '../../services/signUp.js'
 import './SignUp.css'
-
+import { useNavigate } from 'react-router-dom';
 
 
 const SignForm = () => {
@@ -10,6 +10,8 @@ const SignForm = () => {
     const [password, setPassword] = useState('')
     const [confirmPassword, setConfirmPassword] = useState('')
     const [isChecked, setIsChecked] = useState(false)
+    const history = useNavigate();
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -26,6 +28,8 @@ const SignForm = () => {
                     localStorage.setItem("nombre", username)  
                     console.log(username,token,messae)
                     alert('You are IN!')
+                    history('/');
+
             }     
         } else {
         alert('Rellena los campos de manera correcta')
