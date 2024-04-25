@@ -48,7 +48,7 @@ function mostrarRecetas(recetas,comida){
             .map((receta) => { 
                 console.log('a')
             return(
-                <div className='recetas' key={receta.id}>
+                <div className='recetas_Desayunos' key={receta.id}>
                     <h2>{receta.title}</h2>
                     <p>Tiempo de Elaboracion: {receta.cookingTime} </p>
                     <img className='imagen_recetas' src={receta.img_url} alt="" />
@@ -65,7 +65,7 @@ function mostrarRecetas(recetas,comida){
             .map((receta) => { 
                 console.log('a')
             return(
-                <div className='recetas' key={receta.id}>
+                <div className='recetas_almuerzos' key={receta.id}>
                     <h2>{receta.title}</h2>
                     <p>Tiempo de Elaboracion: {receta.cookingTime} </p>
                     <img className='imagen_recetas' src={receta.img_url} alt="" />
@@ -82,7 +82,7 @@ function mostrarRecetas(recetas,comida){
             .map((receta) => { 
                 console.log('a')
             return(
-                <div className='recetas' key={receta.id}>
+                <div className='recetas_cena' key={receta.id}>
                     <h2>{receta.title}</h2>
                     <p>Tiempo de Elaboracion: {receta.cookingTime} </p>
                     <img className='imagen_recetas' src={receta.img_url} alt="" />
