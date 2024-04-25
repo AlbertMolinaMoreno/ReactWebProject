@@ -20,6 +20,7 @@ const Home = () => {
   }
   
   return (
+
    <section>
     <div className="Home-video">
       <video autoPlay loop muted className="video">

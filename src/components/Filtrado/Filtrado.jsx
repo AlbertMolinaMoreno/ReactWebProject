@@ -8,7 +8,7 @@ function Filtrado({recetas}) {
     {recetas.map((receta) => {
         return(
             <div className='recetas' key={receta.id}>
-                <p>{receta.title}</p>
+                <h2>{receta.title}</h2>
                 <p>Tiempo de Elaboracion: {receta.cookingTime} </p>
                 <img className='imagen_recetas' src={receta.img_url} alt="" />
             </div>

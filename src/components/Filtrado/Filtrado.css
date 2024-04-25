@@ -1,7 +1,10 @@
 .recetas{
     display: flex;
     flex-direction:column ;
-    background-color: aqua;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(44, 212, 212, 0.551);
+    border-radius:20px;
 }
 .desayuno{
     display: flex;

@@ -1,0 +1,15 @@
+.grid_recetas{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    margin: 5% 4%;
+    gap: 20px;
+}
+.titulo_recetas{
+    text-align: center;
+    margin-top: 30px;
+}
+.label_Recetas{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
