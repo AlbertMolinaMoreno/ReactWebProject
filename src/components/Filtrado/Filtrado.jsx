@@ -10,7 +10,7 @@ function Filtrado({recetas}) {
             <div className='recetas' key={receta.id}>
                 <p>{receta.title}</p>
                 <p>Tiempo de Elaboracion: {receta.cookingTime} </p>
-                <img src={receta.img_url} alt="" />
+                <img className='imagen_recetas' src={receta.img_url} alt="" />
             </div>
         );
     })} 
