@@ -1,9 +1,25 @@
-// Home.jsx
-import React from "react";
-import "./Home.css";
+
+import './Home.css'
+import Filtrado from '../../components/Filtrado/Filtrado.jsx'
+import {getTodos} from '../../services/auth.js'
+import {useState,useEffect} from 'react'
+
 
 const Home = () => {
+  const [recetas,SetRecetas] = useState([]);
+
+  useEffect(()=> {
+    TodasRecetas()
+  },[])
+
+  async function TodasRecetas() {
+    const data = await getTodos()
+    SetRecetas(data)
+  }
+  
   return (
+
+   <section>
     <div className="Home-video">
       <div className="video-container">
         <video autoPlay loop muted className="video">
@@ -68,8 +84,15 @@ const Home = () => {
           your lifestyle.
         </p>
       </div>
+      <div className='recetasActu'>
+         <Filtrado  recetas={recetas}/>
+      </div>
     </div>
+
+  </section>
   );
-};
+
+}
+
 
 export default Home;
