@@ -1,8 +1,12 @@
+
 // Header.jsx
 import './Header.css';
 import { useNavigate } from 'react-router-dom';
 import {useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
+import foto from "../../../public/imagenes/1.png";
+import foto2 from "../../../public/imagenes/cuenta.png";
+
 
 const Header = () => {
   const navegate = useNavigate()
@@ -25,15 +29,27 @@ const Header = () => {
 
   return (
     <div className="header">
-      <div className='logo'>
-        <img src="file:///home/reboot/Downloads/logo_200x200-removebg-preview.png" alt="Logo" />
+      <div className="logo">
+        <img src={foto} alt="Log" />
       </div>
       <nav className="navigation">
+        <button className="boton">CREATE MENU</button>
         <ul className="nav-list">
-        <Link to='/'><li>About Us</li></Link>
-        <Link to='/recetas'><li>Recetas</li></Link>
-          <li><a href="#">Contacto</a></li>
+
+          <li>
+            <a href="#">RECIPIES</a>
+          </li>
+          <li>
+            <a href="#">ABOUT</a>
+          </li>
+          <li>
+            <a href="#">CONTACT</a>
+          </li>
+
         </ul>
+        <button className="login">
+          <img src={foto2} alt="Log" />
+        </button>
       </nav>
       <button type='button'  onClick={handleClick}>Crear Menu</button>
       <Link to='/login'><button type='button'>Log In</button></Link>
@@ -41,6 +57,6 @@ const Header = () => {
 
     </div>
   );
-}
+};
 
 export default Header;
