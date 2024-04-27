@@ -1,6 +1,17 @@
-.login{
-    display:flex;
+.form_LogIn{
+    display: flex;
     flex-direction: column;
-    gap:10px;
-    margin:0 30%;
+    justify-content: space-between;
+    align-items: center;
+    margin: 45% 15%;
+    gap: 10px;
+}
+.imagen_signUp2{
+    background-image: url('../../../public/imagenes/log_in.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.form_LogIn ::placeholder{
+    color: #6161615c;
 }

@@ -2,6 +2,8 @@ import './LogIn.css'
 import {useState} from 'react'
 import { logIn } from '../../services/logIn.js'
 import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+
 
 const Logear = () => {
     const [email, setEmail] = useState('')
@@ -14,7 +16,11 @@ const Logear = () => {
         if(validatePassword() && validateEmail()){
             const user = {email:email, password:password}
             const logearUsuario = await logIn(user)
-            localStorage.setItem("token",logearUsuario.token)
+            const {token,id,nombre} = logearUsuario
+            console.log(logearUsuario)
+            localStorage.setItem("token",token)
+            localStorage.setItem("id",id)
+            localStorage.setItem("name",nombre)
             alert('Bienvenido')
             history('/');
         } else {
@@ -30,19 +36,28 @@ const Logear = () => {
   };
 
   return (
-    <div >
-      <form className='login' onSubmit={handleLogIn}>
-                <h1>Log In</h1>  
-                <input type="email" placeholder= "Email"  value={email} onChange={(e) => setEmail(e.target.value)} />
+    <section className='container' id="container">
+         <div className='imagen_signUp2'>
+        </div>
+        <form className='form_LogIn' onSubmit={handleLogIn}>
 
-                <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} />
-        
-            <button type="submit">
-                SIGN UP
+            <label className='labels_SignUp'>E-MAIL </label>
+            <input type="email" placeholder= "Enter you e-mail address" className='input_SignUp'  value={email} onChange={(e) => setEmail(e.target.value)} />
+                <br/>
+            <label className='labels_SignUp'>PASSWORD</label>
+            <input type="password" placeholder="xxxxxxxxxxxxxxxxxxxs" className='input_SignUp' value={password} onChange={(e) => setPassword(e.target.value)} />
+                <br/>
+            <div className='agree'>
+                <input type="checkbox" className='check'/>
+                <label className='label_checkbox'> By signing you are agree Terms & Conditions</label>
+            </div>
+            <button type="submit" className='SignUp_Button'>
+                Log In
             </button>
+            <Link to='/SignUp'><button className='SignUp_Button' type='button'>SignUp</button></Link>
        
         </form>
-    </div>
+    </section>
   )
 }
 
